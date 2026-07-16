@@ -1,3 +1,8 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using TalentSyncAI.Data;
+using TalentSyncAI.Models.Identity;
+
 namespace TalentSyncAI
 {
     public class Program
@@ -6,7 +11,13 @@ namespace TalentSyncAI
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
+
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
@@ -20,8 +31,10 @@ namespace TalentSyncAI
             }
 
             app.UseHttpsRedirection();
+
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapStaticAssets();
