@@ -3,11 +3,12 @@ using Microsoft.EntityFrameworkCore;
 using TalentSyncAI.Data;
 using TalentSyncAI.Models.Identity;
 
+
 namespace TalentSyncAI
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,77 @@ namespace TalentSyncAI
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
+
+            using (var scope = app.Services.CreateScope())
+            {
+                var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+
+                string[] roles = { "Admin", "Recruiter", "Candidate" };
+
+                foreach (var role in roles)
+                {
+                    if (!await roleManager.RoleExistsAsync(role))
+                    {
+                        var result = await roleManager.CreateAsync(new IdentityRole(role));
+
+                        if (result.Succeeded)
+                        {
+                            Console.WriteLine($"{role} created successfully.");
+                        }
+                        else
+                        {
+                            foreach (var error in result.Errors)
+                            {
+                                Console.WriteLine(error.Description);
+                            }
+                        }
+                    }
+                }
+            }
+
+
+
+            using (var scope = app.Services.CreateScope())
+            {
+                // Role Manager
+                var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+
+                string[] roles = { "Admin", "Recruiter", "Candidate" };
+
+                foreach (var role in roles)
+                {
+                    if (!await roleManager.RoleExistsAsync(role))
+                    {
+                        await roleManager.CreateAsync(new IdentityRole(role));
+                    }
+                }
+
+                // User Manager
+                var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+
+                string adminEmail = "admin@talentsync.com";
+                string adminPassword = "Admin@123";
+
+                var adminUser = await userManager.FindByEmailAsync(adminEmail);
+
+                if (adminUser == null)
+                {
+                    var user = new ApplicationUser
+                    {
+                        UserName = adminEmail,
+                        Email = adminEmail,
+                        EmailConfirmed = true
+                    };
+
+                    var result = await userManager.CreateAsync(user, adminPassword);
+
+                    if (result.Succeeded)
+                    {
+                        await userManager.AddToRoleAsync(user, "Admin");
+                        Console.WriteLine("Default Admin Created Successfully.");
+                    }
+                }
+            }
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
