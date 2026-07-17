@@ -8,7 +8,7 @@ namespace TalentSyncAI.Controllers
     {
         public IActionResult Index()
         {
-            return Content("Welcome Admin Dashboard");
+            return View();
         }
     }
 }
