@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-10">
+
+            <div class="text-center mb-5">
+                <h2>Create Your TalentSyncAI Account</h2>
+                <p>Select how you want to register.</p>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <div class="card shadow">
+
+                        <div class="card-body text-center">
+
+                            <h3>🏢 Recruiter</h3>
+
+                            <p>
+                                Register your company and start posting jobs.
+                            </p>
+
+                            <a asp-controller="Register"
+                               asp-action="Recruiter"
+                               class="btn btn-primary">
+
+                                Register as Recruiter
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <div class="card shadow">
+
+                        <div class="card-body text-center">
+
+                            <h3>👨‍🎓 Candidate</h3>
+
+                            <p>
+                                Create your profile and apply for jobs.
+                            </p>
+
+                            <a asp-controller="Register"
+                               asp-action="Candidate"
+                               class="btn btn-success">
+
+                                Register as Candidate
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

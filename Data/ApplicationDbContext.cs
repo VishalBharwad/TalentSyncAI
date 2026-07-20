@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using TalentSyncAI.Models.Identity;
+using TalentSyncAI.Models.Entities;
 
 namespace TalentSyncAI.Data
 {
@@ -10,5 +11,7 @@ namespace TalentSyncAI.Data
             : base(options)
         {
         }
+
+        public DbSet<Company> Companies { get; set; }
     }
 }

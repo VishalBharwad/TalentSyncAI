@@ -1,0 +1,30 @@
+﻿@model IEnumerable<TalentSyncAI.Models.Entities.Company>
+
+@{
+    ViewData["Title"] = "Recruiter Management";
+}
+
+<h2>Recruiter Management</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Company</th>
+            <th>Recruiter</th>
+            <th>Email</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CompanyName</td>
+                <td>@item.Recruiter?.FullName</td>
+                <td>@item.Recruiter?.Email</td>
+                <td>@item.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>
