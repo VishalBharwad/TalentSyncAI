@@ -1,6 +1,133 @@
-﻿@{
+﻿@model TalentSyncAI.Models.ViewModels.CandidateRegisterViewModel
+
+@{
     ViewData["Title"] = "Candidate Registration";
 }
 
-<h2>Candidate Registration</h2>
-<p>Coming in the next step...</p>
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-6">
+
+            <div class="card shadow-lg border-0">
+
+                <div class="card-header bg-success text-white text-center">
+
+                    <h3 class="mb-0">
+                        Candidate Registration
+                    </h3>
+
+                </div>
+
+                <div class="card-body p-4">
+
+                    <form asp-action="Candidate"
+                          method="post">
+
+                        <div asp-validation-summary="ModelOnly"
+                             class="text-danger mb-3">
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label asp-for="FullName"></label>
+
+                            <input asp-for="FullName"
+                                   class="form-control" />
+
+                            <span asp-validation-for="FullName"
+                                  class="text-danger">
+                            </span>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label asp-for="Email"></label>
+
+                            <input asp-for="Email"
+                                   class="form-control" />
+
+                            <span asp-validation-for="Email"
+                                  class="text-danger">
+                            </span>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label asp-for="PhoneNumber"></label>
+
+                            <input asp-for="PhoneNumber"
+                                   class="form-control" />
+
+                            <span asp-validation-for="PhoneNumber"
+                                  class="text-danger">
+                            </span>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label asp-for="Password"></label>
+
+                            <input asp-for="Password"
+                                   class="form-control" />
+
+                            <span asp-validation-for="Password"
+                                  class="text-danger">
+                            </span>
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label asp-for="ConfirmPassword"></label>
+
+                            <input asp-for="ConfirmPassword"
+                                   class="form-control" />
+
+                            <span asp-validation-for="ConfirmPassword"
+                                  class="text-danger">
+                            </span>
+
+                        </div>
+
+                        <button type="submit"
+                                class="btn btn-success w-100">
+
+                            Register
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+                <div class="card-footer text-center">
+
+                    Already have an account?
+
+                    <a asp-controller="Account"
+                       asp-action="Login">
+
+                        Login
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts {
+
+    <partial name="_ValidationScriptsPartial" />
+
+}

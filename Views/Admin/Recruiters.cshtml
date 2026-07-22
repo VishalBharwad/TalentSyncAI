@@ -13,6 +13,7 @@
             <th>Recruiter</th>
             <th>Email</th>
             <th>Status</th>
+            <th>Actions</th>
         </tr>
     </thead>
 
@@ -23,7 +24,43 @@
                 <td>@item.CompanyName</td>
                 <td>@item.Recruiter?.FullName</td>
                 <td>@item.Recruiter?.Email</td>
-                <td>@item.Status</td>
+                <td>
+                    @if (item.Status == TalentSyncAI.Enums.CompanyStatus.Pending)
+                    {
+                        <span class="badge bg-warning text-dark">Pending</span>
+                    }
+                    else if (item.Status == TalentSyncAI.Enums.CompanyStatus.Approved)
+                    {
+                        <span class="badge bg-success">Approved</span>
+                    }
+                    else if (item.Status == TalentSyncAI.Enums.CompanyStatus.Rejected)
+                    {
+                        <span class="badge bg-danger">Rejected</span>
+                    }
+                    else if (item.Status == TalentSyncAI.Enums.CompanyStatus.Suspended)
+                    {
+                        <span class="badge bg-secondary">Suspended</span>
+                    }
+                </td>
+                <td>
+                    <a href="#" class="btn btn-info btn-sm">View</a>
+
+                    @if (item.Status == TalentSyncAI.Enums.CompanyStatus.Pending)
+                    {
+                        <a href="#" class="btn btn-success btn-sm">Approve</a>
+                        <a href="#" class="btn btn-danger btn-sm">Reject</a>
+                    }
+
+                    @if (item.Status == TalentSyncAI.Enums.CompanyStatus.Approved)
+                    {
+                        <a href="#" class="btn btn-warning btn-sm">Suspend</a>
+                    }
+
+                    @if (item.Status == TalentSyncAI.Enums.CompanyStatus.Rejected)
+                    {
+                        <a href="#" class="btn btn-primary btn-sm">Approve Again</a>
+                    }
+                </td>
             </tr>
         }
     </tbody>

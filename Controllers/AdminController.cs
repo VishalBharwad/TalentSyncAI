@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TalentSyncAI.Data;
+using TalentSyncAI.Enums;
 
 namespace TalentSyncAI.Controllers
 {
@@ -13,8 +14,26 @@ namespace TalentSyncAI.Controllers
             _context = context;
         }
 
-        public IActionResult Dashboard()
+        public async Task<IActionResult> Dashboard()
         {
+            ViewBag.TotalRecruiters = await _context.Companies.CountAsync();
+
+            ViewBag.PendingRecruiters = await _context.Companies
+                .CountAsync(c => c.Status == CompanyStatus.Pending);
+
+            ViewBag.ApprovedRecruiters = await _context.Companies
+                .CountAsync(c => c.Status == CompanyStatus.Approved);
+
+            // We haven't created these tables yet
+            ViewBag.TotalCandidates = 0;
+            ViewBag.TotalJobs = 0;
+
+            // 👇 Add these lines here
+            ViewBag.RecentRecruiters = await _context.Companies
+                .OrderByDescending(c => c.CreatedAt)
+                .Take(5)
+                .ToListAsync();
+
             return View();
         }
 
@@ -26,5 +45,7 @@ namespace TalentSyncAI.Controllers
 
             return View(recruiters);
         }
+
+
     }
 }

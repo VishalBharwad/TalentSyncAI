@@ -1,0 +1,148 @@
+﻿<aside class="main-sidebar sidebar-dark-primary elevation-4">
+
+    <!-- Brand Logo -->
+    <a asp-controller="Home" asp-action="Index" class="brand-link text-center">
+        <span class="brand-text font-weight-bold">
+            TalentSyncAI
+        </span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <!-- User Panel -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <i class="fas fa-user-circle fa-2x text-white"></i>
+            </div>
+
+            <div class="info">
+                <a href="#" class="d-block">
+                    @User.Identity?.Name
+                </a>
+            </div>
+        </div>
+
+        <!-- Menu -->
+        <nav class="mt-2">
+
+            <ul class="nav nav-pills nav-sidebar flex-column"
+                data-widget="treeview"
+                role="menu"
+                data-accordion="false">
+
+                <!-- Dashboard -->
+                <li class="nav-item">
+                    <a asp-controller="Admin"
+                       asp-action="Dashboard"
+                       class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+
+                <!-- Recruiters -->
+                <li class="nav-item">
+                    <a asp-controller="Admin"
+                       asp-action="Recruiters"
+                       class="nav-link">
+                        <i class="nav-icon fas fa-building"></i>
+                        <p>Recruiters</p>
+                    </a>
+                </li>
+
+                <!-- Candidates -->
+                <li class="nav-item">
+                    <a href="#"
+                       class="nav-link">
+                        <i class="nav-icon fas fa-user-graduate"></i>
+                        <p>Candidates</p>
+                    </a>
+                </li>
+
+                <!-- Companies -->
+                <li class="nav-item">
+                    <a href="#"
+                       class="nav-link">
+                        <i class="nav-icon fas fa-city"></i>
+                        <p>Companies</p>
+                    </a>
+                </li>
+
+                <!-- Jobs -->
+                <li class="nav-item">
+                    <a href="#"
+                       class="nav-link">
+                        <i class="nav-icon fas fa-briefcase"></i>
+                        <p>Jobs</p>
+                    </a>
+                </li>
+
+                <!-- Applications -->
+                <li class="nav-item">
+                    <a href="#"
+                       class="nav-link">
+                        <i class="nav-icon fas fa-file-alt"></i>
+                        <p>Applications</p>
+                    </a>
+                </li>
+
+                <!-- Interviews -->
+                <li class="nav-item">
+                    <a href="#"
+                       class="nav-link">
+                        <i class="nav-icon fas fa-calendar-check"></i>
+                        <p>Interviews</p>
+                    </a>
+                </li>
+
+                <!-- Reports -->
+                <li class="nav-item">
+                    <a href="#"
+                       class="nav-link">
+                        <i class="nav-icon fas fa-chart-line"></i>
+                        <p>Reports</p>
+                    </a>
+                </li>
+
+                <!-- Settings -->
+                <li class="nav-item">
+                    <a href="#"
+                       class="nav-link">
+                        <i class="nav-icon fas fa-cog"></i>
+                        <p>Settings</p>
+                    </a>
+                </li>
+
+                <!-- Divider -->
+                <li class="nav-header">
+                    ACCOUNT
+                </li>
+
+                <!-- Logout -->
+                <li class="nav-item">
+
+                    <form asp-controller="Account"
+                          asp-action="Logout"
+                          method="post">
+
+                        <button type="submit"
+                                class="nav-link btn btn-link text-left w-100">
+
+                            <i class="nav-icon fas fa-sign-out-alt"></i>
+
+                            <p>Logout</p>
+
+                        </button>
+
+                    </form>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</aside>

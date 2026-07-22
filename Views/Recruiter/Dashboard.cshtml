@@ -1,0 +1,229 @@
+﻿@model TalentSyncAI.Models.ViewModels.RecruiterDashboardViewModel
+
+@{
+	ViewData["Title"] = "Recruiter Dashboard";
+	Layout = "~/Views/Shared/_RecruiterLayout.cshtml";
+}
+
+<div class="content-header">
+
+	<div class="container-fluid">
+
+		<h1 class="m-0">
+
+			Welcome,
+			@Model.RecruiterName 👋
+
+		</h1>
+
+		<p class="text-muted">
+
+			Manage your recruitment activities efficiently.
+
+		</p>
+
+	</div>
+
+</div>
+
+<div class="content">
+
+	<div class="container-fluid">
+
+		<div class="row">
+
+			<div class="col-lg-3 col-md-6">
+
+				<div class="small-box bg-primary">
+
+					<div class="inner">
+
+						<h3>@Model.TotalJobs</h3>
+
+						<p>Total Jobs</p>
+
+					</div>
+
+					<div class="icon">
+
+						<i class="fas fa-briefcase"></i>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="col-lg-3 col-md-6">
+
+				<div class="small-box bg-success">
+
+					<div class="inner">
+
+						<h3>@Model.TotalApplications</h3>
+
+						<p>Applications</p>
+
+					</div>
+
+					<div class="icon">
+
+						<i class="fas fa-file-alt"></i>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="col-lg-3 col-md-6">
+
+				<div class="small-box bg-warning">
+
+					<div class="inner">
+
+						<h3>@Model.TotalInterviews</h3>
+
+						<p>Interviews</p>
+
+					</div>
+
+					<div class="icon">
+
+						<i class="fas fa-calendar-check"></i>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="col-lg-3 col-md-6">
+
+				<div class="small-box bg-danger">
+
+					<div class="inner">
+
+						<h3>@Model.TotalShortlisted</h3>
+
+						<p>Shortlisted</p>
+
+					</div>
+
+					<div class="icon">
+
+						<i class="fas fa-user-check"></i>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+<div class="card mt-4">
+
+	<div class="card-header">
+		<h3 class="card-title">
+			Quick Actions
+		</h3>
+	</div>
+
+	<div class="card-body">
+
+		<div class="row">
+
+			<div class="col-md-3 mb-3">
+
+				<a asp-action="PostJob"
+				   class="btn btn-primary btn-block">
+
+					<i class="fas fa-plus-circle"></i><br />
+
+					Post New Job
+
+				</a>
+
+			</div>
+
+			<div class="col-md-3 mb-3">
+
+				<a asp-action="CompanyProfile"
+				   class="btn btn-success btn-block">
+
+					<i class="fas fa-building"></i><br />
+
+					Company Profile
+
+				</a>
+
+			</div>
+
+			<div class="col-md-3 mb-3">
+
+				<a asp-action="ManageJobs"
+				   class="btn btn-warning btn-block">
+
+					<i class="fas fa-briefcase"></i><br />
+
+					Manage Jobs
+
+				</a>
+
+			</div>
+
+			<div class="col-md-3 mb-3">
+
+				<a asp-action="Applications"
+				   class="btn btn-info btn-block">
+
+					<i class="fas fa-file-alt"></i><br />
+
+					Applications
+
+				</a>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+<div class="card mt-4">
+
+	<div class="card-header">
+
+		<h3 class="card-title">
+
+			Recent Jobs
+
+		</h3>
+
+	</div>
+
+	<div class="card-body">
+
+		<div class="text-center text-muted">
+
+			<i class="fas fa-briefcase fa-3x mb-3"></i>
+
+			<h5>No jobs posted yet.</h5>
+
+			<p>
+				Click "Post New Job" to create your first job posting.
+			</p>
+
+		</div>
+
+	</div>
+
+</div>
+
+

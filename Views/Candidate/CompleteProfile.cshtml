@@ -1,0 +1,130 @@
+﻿@model TalentSyncAI.Models.ViewModels.CandidateProfileViewModel
+
+@{
+    ViewData["Title"] = "Complete Profile";
+}
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-md-8 offset-md-2">
+
+            <div class="card shadow mt-4">
+
+                <div class="card-header bg-primary text-white">
+
+                    <h3 class="mb-0">
+                        Complete Your Profile
+                    </h3>
+
+                </div>
+
+                <div class="card-body">
+
+                    <form asp-action="CompleteProfile"
+                          method="post">
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+
+                                <label asp-for="DateOfBirth"></label>
+
+                                <input asp-for="DateOfBirth"
+                                       type="date"
+                                       class="form-control" />
+
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+
+                                <label asp-for="Gender"></label>
+
+                                <select asp-for="Gender"
+                                        class="form-control">
+
+                                    <option value="">Select Gender</option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Other</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label asp-for="Address"></label>
+
+                            <textarea asp-for="Address"
+                                      class="form-control"
+                                      rows="3"></textarea>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-4 mb-3">
+
+                                <label asp-for="City"></label>
+
+                                <input asp-for="City"
+                                       class="form-control" />
+
+                            </div>
+
+                            <div class="col-md-4 mb-3">
+
+                                <label asp-for="State"></label>
+
+                                <input asp-for="State"
+                                       class="form-control" />
+
+                            </div>
+
+                            <div class="col-md-4 mb-3">
+
+                                <label asp-for="Country"></label>
+
+                                <input asp-for="Country"
+                                       class="form-control" />
+
+                            </div>
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label asp-for="Pincode"></label>
+
+                            <input asp-for="Pincode"
+                                   class="form-control" />
+
+                        </div>
+
+                        <button class="btn btn-primary">
+
+                            Save & Continue
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts {
+
+    <partial name="_ValidationScriptsPartial" />
+
+}

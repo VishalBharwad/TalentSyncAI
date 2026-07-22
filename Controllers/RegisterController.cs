@@ -83,9 +83,60 @@ namespace TalentSyncAI.Controllers
             return RedirectToAction("Login", "Account");
         }
 
+        [HttpGet]
         public IActionResult Candidate()
         {
             return View();
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Candidate(CandidateRegisterViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var user = new ApplicationUser
+            {
+                FullName = model.FullName,
+                UserName = model.Email,
+                Email = model.Email,
+                PhoneNumber = model.PhoneNumber,
+                IsActive = true,
+                CreatedDate = DateTime.Now
+            };
+
+            var result = await _userManager.CreateAsync(user, model.Password);
+
+            if (!result.Succeeded)
+            {
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+
+                return View(model);
+            }
+
+            await _userManager.AddToRoleAsync(user, "Candidate");
+
+            var candidate = new Candidate
+            {
+                UserId = user.Id,
+                ProfileCompleted = false,
+                CreatedAt = DateTime.Now
+            };
+
+            _context.Candidates.Add(candidate);
+
+            await _context.SaveChangesAsync();
+
+            TempData["Success"] = "Registration completed successfully. Please login.";
+
+            return RedirectToAction("Login", "Account");
         }
     }
 }

@@ -1,0 +1,88 @@
+﻿<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold text-primary"
+           asp-controller="Home"
+           asp-action="Index">
+
+            <img src="~/images/logo/logo.png"
+                 alt="TalentSyncAI"
+                 height="45"
+                 class="me-2" />
+
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbar">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse"
+             id="navbar">
+
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-controller="Home"
+                       asp-action="Index">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-controller="Home"
+                       asp-action="Jobs">
+                        Jobs
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-controller="Home"
+                       asp-action="About">
+                        About
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       asp-controller="Home"
+                       asp-action="Contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="d-flex">
+
+                <a asp-controller="Account"
+                   asp-action="Login"
+                   class="btn btn-outline-primary me-2">
+
+                    Login
+
+                </a>
+
+                <a asp-controller="Register"
+                   asp-action="Index"
+                   class="btn btn-primary">
+
+                    Register
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>

@@ -1,0 +1,144 @@
+﻿.hero-section {
+    padding: 90px 0;
+    background: linear-gradient(135deg,#f8fbff,#eef5ff);
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #e8f1ff;
+    color: #0d6efd;
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+.hero-title {
+    font-size: 55px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.hero-description {
+    color: #6c757d;
+    font-size: 20px;
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+.hero-image {
+    max-height: 520px;
+    transition: .4s;
+}
+
+    .hero-image:hover {
+        transform: translateY(-8px);
+    }
+
+.hero-features {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    font-weight: 600;
+}
+.trusted-section {
+    padding: 70px 0;
+    background: #fff;
+}
+
+.trusted-title {
+    font-weight: 700;
+    color: #6c757d;
+    letter-spacing: 1px;
+}
+
+.company-card {
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 25px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #495057;
+    transition: .3s;
+    background: white;
+}
+
+    .company-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,.08);
+        color: #0d6efd;
+    }
+
+
+.stats-section {
+    background: #f8f9fa;
+    padding: 90px 0;
+}
+
+.stat-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 35px;
+    transition: .35s;
+    box-shadow: 0 5px 15px rgba(0,0,0,.05);
+}
+
+    .stat-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(13,110,253,.15);
+    }
+
+.stat-icon {
+    font-size: 45px;
+    color: #0d6efd;
+    margin-bottom: 20px;
+}
+
+.stat-card h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #212529;
+}
+
+.stat-card p {
+    font-size: 18px;
+    color: #6c757d;
+    margin-bottom: 0;
+}
+
+
+
+.why-section {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+.feature-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 35px 30px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,.06);
+    transition: .35s;
+    height: 100%;
+}
+
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(13,110,253,.18);
+    }
+
+.feature-icon {
+    font-size: 50px;
+    color: #0d6efd;
+    margin-bottom: 20px;
+}
+
+.feature-card h4 {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    color: #6c757d;
+    margin-bottom: 0;
+}

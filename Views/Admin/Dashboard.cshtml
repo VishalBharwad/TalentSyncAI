@@ -1,0 +1,127 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="content-header">
+    <div class="container-fluid">
+        <h1 class="m-0">Admin Dashboard</h1>
+    </div>
+</div>
+
+<div class="content">
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3>@ViewBag.TotalRecruiters</h3>
+                        <p>Total Recruiters</p>
+                    </div>
+
+                    <div class="icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-warning">
+                    <div class="inner">
+                        <h3>@ViewBag.PendingRecruiters</h3>
+                        <p>Pending Approval</p>
+                    </div>
+
+                    <div class="icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-success">
+                    <div class="inner">
+                        <h3>@ViewBag.ApprovedRecruiters</h3>
+                        <p>Approved Recruiters</p>
+                    </div>
+
+                    <div class="icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-danger">
+                    <div class="inner">
+                        <h3>@ViewBag.TotalCandidates</h3>
+                        <p>Total Candidates</p>
+                    </div>
+
+                    <div class="icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        @using TalentSyncAI.Models.Entities
+
+        @{
+            var recruiters = ViewBag.RecentRecruiters as List<Company>;
+        }
+
+        <div class="card mt-4">
+
+            <div class="card-header">
+                <h3 class="card-title">
+                    Recent Recruiters
+                </h3>
+            </div>
+
+            <div class="card-body">
+
+                <table class="table table-bordered table-hover">
+
+                    <thead>
+                        <tr>
+                            <th>Company</th>
+                            <th>Status</th>
+                            <th>Created Date</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        @if (recruiters != null && recruiters.Any())
+                        {
+                            foreach (var item in recruiters)
+                            {
+                                <tr>
+                                    <td>@item.CompanyName</td>
+                                    <td>@item.Status</td>
+                                    <td>@item.CreatedAt.ToShortDateString()</td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="3" class="text-center">
+                                    No Recruiters Found
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

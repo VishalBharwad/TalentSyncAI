@@ -51,18 +51,20 @@ namespace TalentSyncAI.Controllers
             {
                 if (await _userManager.IsInRoleAsync(user, "Admin"))
                 {
-                    return RedirectToAction("Index", "Admin");
+                    return RedirectToAction("Dashboard", "Admin");
                 }
 
                 if (await _userManager.IsInRoleAsync(user, "Recruiter"))
                 {
-                    return RedirectToAction("Index", "Recruiter");
+                    return RedirectToAction("Dashboard", "Recruiter");
                 }
 
                 if (await _userManager.IsInRoleAsync(user, "Candidate"))
                 {
-                    return RedirectToAction("Index", "Candidate");
+                    return RedirectToAction("Dashboard", "Candidate");
                 }
+
+                return RedirectToAction("Index", "Home");
             }
 
             ModelState.AddModelError("", "Invalid Email or Password.");
@@ -74,6 +76,7 @@ namespace TalentSyncAI.Controllers
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
+
             return RedirectToAction("Login", "Account");
         }
     }

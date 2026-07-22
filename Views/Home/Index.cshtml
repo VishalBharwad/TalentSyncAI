@@ -1,8 +1,283 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@section Styles
+{
+    <link rel="stylesheet" href="~/css/home.css" />
+}
+<section class="hero-section">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <span class="hero-badge">
+                    🚀 AI-Powered Recruitment Platform
+                </span>
+
+                <h1 class="hero-title mt-4">
+
+                    Find Your
+
+                    <span class="text-primary">
+                        Dream Job
+                    </span>
+
+                    with TalentSyncAI
+
+                </h1>
+
+                <p class="hero-description">
+
+                    Empowering companies and candidates through AI-powered
+                    recruitment, smart resume screening, intelligent matching,
+                    and faster hiring.
+
+                </p>
+
+                <div class="mt-4">
+
+                    <a asp-controller="Home"
+                       asp-action="Jobs"
+                       class="btn btn-primary btn-lg me-3">
+
+                        <i class="fas fa-search me-2"></i>
+
+                        Find Jobs
+
+                    </a>
+
+                    <a asp-controller="Home"
+                       asp-action="Register"
+                       class="btn btn-outline-primary btn-lg">
+
+                        <i class="fas fa-building me-2"></i>
+
+                        Hire Talent
+
+                    </a>
+
+                </div>
+
+                <div class="hero-features mt-5">
+
+                    <div>
+                        <i class="fas fa-check-circle text-success"></i>
+
+                        AI Resume Matching
+                    </div>
+
+                    <div>
+                        <i class="fas fa-check-circle text-success"></i>
+
+                        Smart Hiring
+                    </div>
+
+                    <div>
+                        <i class="fas fa-check-circle text-success"></i>
+
+                        Instant Applications
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6 text-center">
+
+                <img src="~/images/logo/hero.png"
+                     class="img-fluid hero-image"
+                     alt="Hero Image" />
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="trusted-section">
+
+    <div class="container text-center">
+
+        <h5 class="trusted-title">
+            Trusted by Growing Companies
+        </h5>
+
+        <div class="row mt-5">
+
+            <div class="col-md-2 col-6 mb-4">
+                <div class="company-card">TechNova</div>
+            </div>
+
+            <div class="col-md-2 col-6 mb-4">
+                <div class="company-card">CodeSphere</div>
+            </div>
+
+            <div class="col-md-2 col-6 mb-4">
+                <div class="company-card">FutureSoft</div>
+            </div>
+
+            <div class="col-md-2 col-6 mb-4">
+                <div class="company-card">NextGen AI</div>
+            </div>
+
+            <div class="col-md-2 col-6 mb-4">
+                <div class="company-card">CloudWorks</div>
+            </div>
+
+            <div class="col-md-2 col-6 mb-4">
+                <div class="company-card">TalentHub</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="stats-section">
+
+    <div class="container">
+
+        <div class="row text-center">
+
+            <div class="col-lg-3 col-md-6 mb-4">
+
+                <div class="stat-card">
+
+                    <i class="fas fa-briefcase stat-icon"></i>
+
+                    <h2>500+</h2>
+
+                    <p>Active Jobs</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+
+                <div class="stat-card">
+
+                    <i class="fas fa-building stat-icon"></i>
+
+                    <h2>150+</h2>
+
+                    <p>Companies</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+
+                <div class="stat-card">
+
+                    <i class="fas fa-users stat-icon"></i>
+
+                    <h2>12K+</h2>
+
+                    <p>Candidates</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+
+                <div class="stat-card">
+
+                    <i class="fas fa-chart-line stat-icon"></i>
+
+                    <h2>95%</h2>
+
+                    <p>Hiring Success</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="why-section">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+                Why Choose
+                <span class="text-primary">TalentSyncAI?</span>
+            </h2>
+
+            <p class="text-muted">
+                A modern AI-powered recruitment platform for companies and job seekers.
+            </p>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card">
+                    <i class="fas fa-robot feature-icon"></i>
+                    <h4>AI Resume Matching</h4>
+                    <p>Automatically match resumes with job requirements using AI.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card">
+                    <i class="fas fa-bolt feature-icon"></i>
+                    <h4>Fast Hiring</h4>
+                    <p>Reduce hiring time with automated workflows.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card">
+                    <i class="fas fa-user-check feature-icon"></i>
+                    <h4>Smart Recommendations</h4>
+                    <p>Get the most suitable candidates and jobs instantly.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt feature-icon"></i>
+                    <h4>Secure Platform</h4>
+                    <p>Role-based authentication keeps your data protected.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card">
+                    <i class="fas fa-chart-line feature-icon"></i>
+                    <h4>Analytics Dashboard</h4>
+                    <p>Track recruitment performance with insightful reports.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card">
+                    <i class="fas fa-bell feature-icon"></i>
+                    <h4>Instant Notifications</h4>
+                    <p>Stay updated about interviews, applications, and approvals.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

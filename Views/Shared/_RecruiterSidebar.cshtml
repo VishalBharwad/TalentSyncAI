@@ -1,0 +1,118 @@
+﻿<aside class="main-sidebar sidebar-dark-primary elevation-4">
+
+    <a asp-controller="Recruiter"
+       asp-action="Dashboard"
+       class="brand-link text-center">
+
+        <img src="~/images/logo/logo-white.png"
+             alt="TalentSyncAI"
+             style="height:45px;" />
+
+    </a>
+
+    <div class="sidebar">
+
+        <nav class="mt-2">
+
+            <ul class="nav nav-pills nav-sidebar flex-column"
+                data-widget="treeview"
+                role="menu">
+
+                <li class="nav-item">
+                    <a asp-controller="Recruiter"
+                       asp-action="Dashboard"
+                       class="nav-link">
+
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+
+                        <p>Dashboard</p>
+
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a asp-controller="Recruiter"
+                       asp-action="CompanyProfile"
+                       class="nav-link">
+
+                        <i class="nav-icon fas fa-building"></i>
+
+                        <p>Company Profile</p>
+
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a asp-controller="Recruiter"
+                       asp-action="PostJob"
+                       class="nav-link">
+
+                        <i class="nav-icon fas fa-plus-circle"></i>
+
+                        <p>Post Job</p>
+
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a asp-controller="Recruiter"
+                       asp-action="ManageJobs"
+                       class="nav-link">
+
+                        <i class="nav-icon fas fa-briefcase"></i>
+
+                        <p>Manage Jobs</p>
+
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a asp-controller="Recruiter"
+                       asp-action="Applications"
+                       class="nav-link">
+
+                        <i class="nav-icon fas fa-file-alt"></i>
+
+                        <p>Applications</p>
+
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a asp-controller="Recruiter"
+                       asp-action="Interviews"
+                       class="nav-link">
+
+                        <i class="nav-icon fas fa-calendar-check"></i>
+
+                        <p>Interviews</p>
+
+                    </a>
+                </li>
+
+                <li class="nav-item">
+
+                    <form asp-controller="Account"
+                          asp-action="Logout"
+                          method="post">
+
+                        <button type="submit"
+                                class="nav-link border-0 bg-transparent w-100 text-start">
+
+                            <i class="nav-icon fas fa-sign-out-alt"></i>
+
+                            <p>Logout</p>
+
+                        </button>
+
+                    </form>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</aside>

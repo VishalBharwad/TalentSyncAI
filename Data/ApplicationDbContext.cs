@@ -13,5 +13,6 @@ namespace TalentSyncAI.Data
         }
 
         public DbSet<Company> Companies { get; set; }
+        public DbSet<Candidate> Candidates { get; set; }
     }
 }

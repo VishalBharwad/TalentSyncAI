@@ -4,12 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>@ViewData["Title"] - TalentSyncAI Admin</title>
+    <title>@ViewData["Title"] - TalentSyncAI Recruiter</title>
 
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="~/plugins/fontawesome-free/css/all.min.css">
-
-    <!-- AdminLTE -->
     <link rel="stylesheet" href="~/dist/css/adminlte.min.css">
 
     @RenderSection("Styles", required: false)
@@ -21,7 +18,7 @@
 
         <partial name="_Navbar" />
 
-        <partial name="_AdminSidebar" />
+        <partial name="_RecruiterSidebar" />
 
         <div class="content-wrapper">
 
@@ -33,13 +30,8 @@
 
     </div>
 
-    <!-- jQuery -->
     <script src="~/plugins/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap -->
     <script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- AdminLTE -->
     <script src="~/dist/js/adminlte.min.js"></script>
 
     @RenderSection("Scripts", required: false)
